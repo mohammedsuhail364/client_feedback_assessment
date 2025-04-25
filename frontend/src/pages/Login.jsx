@@ -28,7 +28,7 @@ const Login = () => {
       login(data); // Optional context state
       navigate(data.isAdmin ? "/admin" : "/feedback");
     } catch (err) {
-      setError("Invalid credentials");
+      setError("Invalid credentials",err);
     }
   };
 
@@ -73,15 +73,6 @@ const Login = () => {
             Login
           </button>
         </form>
-
-        <div className="text-center mt-4">
-          <p className="text-sm">
-            Don't have an account?{" "}
-            <a href="/sign-up" className="text-indigo-400 hover:underline">
-              Sign Up
-            </a>
-          </p>
-        </div>
       </motion.div>
     </div>
   );
